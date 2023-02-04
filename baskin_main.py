@@ -29,7 +29,7 @@ while 1:
         
     if controller.baskin_state>=31:
         controller.finish()
-
+        
 
 """ 
     게임시작 (while)
