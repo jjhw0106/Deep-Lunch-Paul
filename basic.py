@@ -53,3 +53,6 @@ print(house.describe) # 각 컬럼의 통계자료 요약
 
 # 3항 연산자
 print("참") if 1 else print("거짓")
+
+# 스크립트 파일 실행하기
+exec(open("baskin_main.py",'rt',encoding='UTF8').read())
