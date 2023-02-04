@@ -50,3 +50,6 @@ house = pandas.read_csv('house.csv') # csv파일 읽어서 house에 대입
 print(house)
 print(house.head(2)) # 위 두개
 print(house.describe) # 각 컬럼의 통계자료 요약
+
+# 3항 연산자
+print("참") if 1 else print("거짓")
