@@ -3,31 +3,33 @@ import random
 
 controller = BaskinController()
 
+controller.turn = random.choice([True, False])
+
 while 1:
     if controller.baskin_state >= 31: 
         break
-    
-    if controller.yourTurn == True:
-        go = int(input("Your Turn: "))
-        if go == 2 or controller.callCount>=3:
-            print("Turn Change!")
-            controller.changeTurn()
-            print(controller.yourTurn)
-        elif go == 1:
-            controller.go()
-            print('baskin_state:'+str(controller.baskin_state))
-    
-    elif controller.yourTurn == False and controller.callCount<3:
-        print("Cpu Turn!")
-        cpuGoCnt = random.randint(1,3)
-        for i in range(cpuGoCnt):
-            controller.go()
-            if controller.baskin_state >= 31:
-                break
-        print('baskin_state:'+str(controller.baskin_state))
+    if(controller.callCount>=3):  
         controller.changeTurn()
+    
+    if controller.turn == True:
+        choice = int(input("Your Turn: "))
+        if choice == 2:
+            if controller.callCount == 0:
+                print("한 개 이상은 외쳐야지?")
+                continue
+            controller.changeTurn()
+        elif choice == 1:
+            controller.go()
+    
+    elif controller.turn == False:
+        print("Cpu Turn!")
+        controller.cpuGoCount()
+        if controller.baskin_state<31:
+            controller.changeTurn()
+        
+    if controller.baskin_state>=31:
+        controller.finish()
 
-print("이겼습니다!") if controller.yourTurn1 else print("패배했습니다...")
 
 """ 
     게임시작 (while)
