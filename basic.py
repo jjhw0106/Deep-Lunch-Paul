@@ -56,3 +56,7 @@ print("참") if 1 else print("거짓")
 
 # 스크립트 파일 실행하기
 exec(open("baskin_main.py",'rt',encoding='UTF8').read())
+
+# 리눅스 파일or폴더 실행
+# code 경로
+# ex) code Flutter_project => 에디터에 해당 폴더 실행
