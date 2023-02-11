@@ -14,3 +14,4 @@ elif choice == str(2):
 elif choice == str(3):
     print('UpDown Game Start')
     exec(open("week1/updown_main.py",encoding='UTF8').read())
+1
