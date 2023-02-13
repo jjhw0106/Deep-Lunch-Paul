@@ -48,3 +48,8 @@ class ExampleClass2:
 exA = ExampleClass2(3,4)
 print(exA.argument1, exA.argument2)
 print(ExampleClass2.argument1, ExampleClass2.argument2)
+
+# __main__ 사용하기
+# __name__ => 자기자신 / '__main__' => 프로그램의 시작점 
+# if __name__ == '__main__': => 현재 이 파일이 프로그램의 시작점일 경우 실행해라
+# import하는 경우, import 받은 파일을 실행시키면 import된 프로그램의 명령도 실행됨. 이를 방지하기 위해 __main__사용
