@@ -12,6 +12,5 @@ elif choice == str(2):
     print('UpDown Game Start')
     exec(open("week1/updown_main.py",encoding='UTF8').read())
 elif choice == str(3):
-    print('UpDown Game Start')
-    exec(open("week1/updown_main.py",encoding='UTF8').read())
-1
+    print('Sort Start')
+    exec(open("week1/sort_main.py",encoding='UTF8').read())
