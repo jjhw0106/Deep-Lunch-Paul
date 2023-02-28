@@ -5,6 +5,7 @@ import cv2
 # 경로에서 파일 읽기
 # imageSrc = cv2.imread("C:/Users/jjhw0/Documents/Python/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 # 상대경로 오류 -> 현재경로가 open_cv가 아닌 작업경로가 기준이 된다.
+# os.getcwd() -> 터미널 경로 확인
 imageSrc = cv2.imread("week4/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 # =>왜 image/ailee로하면 에러가 나는지? 
 
@@ -13,7 +14,7 @@ imageSrc = cv2.imread("week4/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 
 ### 이미지 사이즈 조절 ###
 # 이미지를 축소하여 새로운 픽셀에 색상을 할당해주어야 하기 때문에
-# 보간법을 통해 픽셀의 색상을 추정해야 한다. -> interpolation 속성
+# 보간법을 통해 픽셀의 색상을 추정해야 한다. -> interpolation 속성.
 cv2.imshow("original size", imageSrc)
 
 # 1. 절대크기
@@ -39,7 +40,7 @@ h,s,v = cv2.split(hsvImg)
 
 # 마스크 설정
 mask_skin = cv2.inRange(h,0,30)
-mask_lip= cv2.inRange(h,150,200)
+mask_lip = cv2.inRange(h,150,200)
 
 # 마스킹
 # 두 이미지를 비교하여 마스크에 해당하는 색이 같은 위치에 들어간 부분만 표현
