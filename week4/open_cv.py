@@ -18,13 +18,11 @@ imageSrc = cv2.imread("week4/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 cv2.imshow("original size", imageSrc)
 
 # 1. 절대크기
-# smallImg = cv2.resize(grayImg, dsize=(800,200), interpolation=cv2.INTER_AREA)
+smallImg = cv2.resize(imageSrc, dsize=(800,200), interpolation=cv2.INTER_AREA)
 
 # 2. 상대크기
 # dsize 기준으로 fx, fy가 각각 x와 y의 비율을 설정
 # dsize가 (0,0)이면 원본과 동일한 크기
-smallImg = cv2.resize(imageSrc, dsize=(0,0), fx =0.5, fy = 0.5, interpolation=cv2.INTER_LINEAR)
-
 
 ### 이미지 색상변경 ###
 # OpenCV는 기본적으로 색상값을 BGR형태로 저장하고 있다.
