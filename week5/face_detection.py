@@ -5,29 +5,26 @@ import mediapipe as mp
 videoSrc = "C:/Users/jjhw0/Desktop/programming/assets/cv2_assets/before.mp4"
 cap = cv2.VideoCapture(videoSrc)
 
-while(cap.isOpened()):
-    ret, frame = cap.read()
-    if ret:
-        cv2.imshow('videoSrc', frame)
+# 1. 카메라(캠)일 경우
+# 영상 프레임을 읽기 전 사이즈 조절
+# w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+# h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+# print('w=',w, 'h=',h)
+# cap.set(cv2.CAP_PROP_FRAME_WIDTH, 360)
+# cap.set(cv2.CAP_PROP_FRAME_HEIGHT,640)
+# print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 
+# 동영상파일일 경우
+# 영상 프레임을 읽어온 후 사이즈 조절
+# flow : 영상을 프레임단위로 Read -> Resize -> resize된 이미지를 한장씩 보여줌
+while True:
+    retval, frame = cap.read()
+    if not retval:
+        break
+    resized_frame = cv2.resize(frame, (180,320), interpolation=cv2.INTER_CUBIC)
+    cv2.imshow("resized frame", resized_frame)
+    cv2.waitKey(5) # 동영상의 프레임만큼 waitKey에 넣어줘야 동영상을 제대로 읽어온다
+print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+cap.release()
 
-# mp_face_detection = mp.solutions.face_detection
-# mp_drawing = mp.solutions.drawing_utils
-# drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius = 1)
-# with mp_face_detection.FaceDetection(
-#     min_detection_confidence=0.5, model_selection=0) as face_detection:
-#   for name, image in short_range_images.items():
-#     # Convert the BGR image to RGB and process it with MediaPipe Face Detection.
-#     results = face_detection.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-
-#     # Draw face detections of each face.
-#     print(f'Face detections of {name}:')
-#     if not results.detections:
-#       continue
-#     annotated_image = image.copy()
-#     for detection in results.detections:
-#       mp_drawing.draw_detection(annotated_image, detection)
-#     resize_and_show(annotated_image)
-
-cv2.waitKey(5)
 # mp_drawing = mp.solutions.drawing_utils

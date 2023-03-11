@@ -15,10 +15,10 @@ imageSrc = cv2.imread("week4/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 ### 이미지 사이즈 조절 ###
 # 이미지를 축소하여 새로운 픽셀에 색상을 할당해주어야 하기 때문에
 # 보간법을 통해 픽셀의 색상을 추정해야 한다. -> interpolation 속성.
-cv2.imshow("original size", imageSrc)
+# cv2.imshow("original size", imageSrc)
 
 # 1. 절대크기
-smallImg = cv2.resize(imageSrc, dsize=(800,200), interpolation=cv2.INTER_AREA)
+smallImg = cv2.resize(imageSrc, dsize=(0,0),fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
 
 # 2. 상대크기
 # dsize 기준으로 fx, fy가 각각 x와 y의 비율을 설정
