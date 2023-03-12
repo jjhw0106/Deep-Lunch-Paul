@@ -14,7 +14,7 @@ cap = cv2.VideoCapture(videoSrc)
 # cap.set(cv2.CAP_PROP_FRAME_HEIGHT,640)
 # print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 
-# 동영상파일일 경우
+# 동영상파일일 경우d
 # 영상 프레임을 읽어온 후 사이즈 조절
 # flow : 영상을 프레임단위로 Read -> Resize -> resize된 이미지를 한장씩 보여줌
 while True:

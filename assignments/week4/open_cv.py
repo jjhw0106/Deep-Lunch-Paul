@@ -6,7 +6,7 @@ import cv2
 # imageSrc = cv2.imread("C:/Users/jjhw0/Documents/Python/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
 # 상대경로 오류 -> 현재경로가 open_cv가 아닌 작업경로가 기준이 된다.
 # os.getcwd() -> 터미널 경로 확인
-imageSrc = cv2.imread("week4/Image/ailee.jpg", cv2.IMREAD_UNCHANGED)
+imageSrc = cv2.imread("assets/images/ailee.jpg", cv2.IMREAD_UNCHANGED)
 # =>왜 image/ailee로하면 에러가 나는지? 
 
 # 이미지파일 윈도우로 띄우기

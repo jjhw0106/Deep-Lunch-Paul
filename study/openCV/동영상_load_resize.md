@@ -19,6 +19,17 @@ cap = cv2.VideoCapture(videoSrc)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 360)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 640)
     print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+
+    while True:
+        retval, frame = cap.read()
+        
+        if not retval:
+            break
+
+        cv2.imshow("resized frame", resized_frame)
+        cv2.waitKey(24) # 동영상의 프레임만큼 waitKey에 넣어줘야 동영상을 제대로 읽어온다
+    
+    cap.release() 
     ```
 
 ## 2-2 동영상파일일 경우
@@ -35,6 +46,6 @@ cap = cv2.VideoCapture(videoSrc)
         resized_frame = cv2.resize(frame, (180,320), interpolation=cv2.INTER_CUBIC)
         cv2.imshow("resized frame", resized_frame)
         cv2.waitKey(24) # 동영상의 프레임만큼 waitKey에 넣어줘야 동영상을 제대로 읽어온다
-    print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    
     cap.release() 
     ```
