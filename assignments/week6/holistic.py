@@ -91,3 +91,6 @@ with mp_holistic.Holistic(
     if cv2.waitKey(5) & 0xFF == 27:
       break
 cap.release()
+
+
+# git filter-branch --tree-filter 'rm -rf path/to/your/file' HEAD
