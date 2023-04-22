@@ -2,7 +2,7 @@ import cv2
 # 파이썬 버전 3.7 - 3.10 사이만 지원``
 import mediapipe as mp
 
-videoSrc = "C:/Users/jjhw0/Desktop/programming/assets/cv2_assets/before.mp4"
+videoSrc = "C:/Users/jjhw0/Desktop/programming/assets/video/before_.mp4"
 cap = cv2.VideoCapture(videoSrc)
 
 # 1. 카메라(캠)일 경우
