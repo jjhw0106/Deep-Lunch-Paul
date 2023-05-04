@@ -1,28 +1,23 @@
-from collections import defaultdict
+name = ["kali", "mari", "don"]
+yearning = [11, 1, 55]
+photo = [["kali", "mari", "don"], ["pony", "tom", "teddy"], ["con", "mona", "don"]]
 
 
-name = ["may", "kein", "kain", "radi"]
-yearning = [5, 10, 1, 3]
-photo = [["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]
 
-def solution(name, yearning, photo):
-    # name : 그리워하는 사람의 이름
-    # yearning : 그리움 점수
-    # photo : 분석대상 사진
-    
-    result = {}
+def solution():
+    dictScore = {}
     answer = []
-    sum = 0
-    for name, yearning in zip(name, yearning):
-        result[name] = yearning
+    for n, y in zip(name, yearning):
+        dictScore[n] = y
     
-    name_info = defaultdict(int)
-    
-    for i in range(len(photo)):
-        for j in range(len(photo[i])):
-            if(photo[i][j] in name):
-                sum += result[photo[i][j]]
-    print(sum)
-    return answer   
+    for i in photo:
+        sum = 0
+        for j in i:
+            if j in dictScore:
+                sum += dictScore[j]
+        answer.append(sum)
 
-solution(name, yearning, photo)
+    print(answer)
+    return answer
+
+solution()

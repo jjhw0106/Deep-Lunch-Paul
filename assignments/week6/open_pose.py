@@ -13,8 +13,8 @@ POSE_PAIRS = [ ["Head", "Neck"], ["Neck", "RShoulder"], ["RShoulder", "RElbow"],
                 ["RKnee", "RAnkle"], ["Chest", "LHip"], ["LHip", "LKnee"], ["LKnee", "LAnkle"] ]
     
 # 각 파일 path
-protoFile = "assets/external_files/open_pose/pose_deploy_linevec_faster_4_stages.prototxt"
-weightsFile = "assets/external_files/open_pose/pose_iter_160000.caffemodel"
+protoFile = "c/Users/jjhw0/Desktop/programming/assets/external_files/open_pose/pose_deploy_linevec_faster_4_stages.prototxt"
+weightsFile = "c/Users/jjhw0/Desktop/programming/assets/external_files/open_pose/pose_iter_160000.caffemodel"
  
 # 위의 path에 있는 network 불러오기
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
