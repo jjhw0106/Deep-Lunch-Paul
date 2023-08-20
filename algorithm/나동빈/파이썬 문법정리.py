@@ -42,4 +42,41 @@ print(array)
 # for _ in range(5):
 #   print('hello')          => hello 5번 출력
 
+array2 = [[0 for i in range(5)] for u in range(10)]
+print(array2)
 # ===================================================
+
+# 파이썬에서 모든 원소 지우기
+# 파이썬은 remove_all()을 지원하지 않는다.
+# remove_set에 없는 애들만 result에 넣는 방식으로 진행
+a = [1,2,3,4,5,5,5]
+remove_set = [3,5]
+array3 = [i for i in a if i not in remove_set]
+print(array3)
+
+# 문자열 연산
+a = "Hello"
+b = "World"
+print(a + " " + b)
+print(a*3)
+# 문자열은 내부적으로 리스트처럼 처리
+c = 'abcdef'
+print(c[2:4])
+
+# 튜플과 리스트의 차이
+# 튜플은 선언된 값을 변경할 수 없다
+# 튜플은 소괄호()를 사용한다.
+tuple = (1,2,3,4)
+print(tuple, tuple[2])
+# tuple[2] = 10 => 에러 발생, 튜플 값 변경 불가
+
+# 함수 밖에 선언된 변수(전역 변수)를 변경하기 위해선 함수 내부에서 
+# global 키워드를 이용하여 변수를 초기화 해줘야 한다.
+globalVar = 20
+def funcGlo():
+    global globalVar
+    globalVar = 256
+    print(globalVar)
+
+funcGlo()
+print(globalVar)
