@@ -10,21 +10,27 @@
 # 실패율이 높은 스테이지부터 내림차순으로 스테이지의 번호가 담겨있는 배열을 return 하도록 solution 함수를 완성하라.
 
 def solution(N, stages):
-    answer = []
+  answer = []
+  
+  fail = [0 for _ in range(N)]        #0 0 0 0 0
+  challenger = [0 for _ in range(N)]  #0 0 0 0 0
+  
+  for i in stages:
+    if i <= N:
+      fail[i-1] += 1
+    if i <= N:
+      for j in range(i):
+        challenger[j] += 1
+    if i > N:
+      for j in range(i-1):
+        challenger[j] += 1
     
-    fail = [0 for _ in range(N)]
-    challenger = len(stages)
-    allClearer = 0
-    for idx, i in enumerate(stages):
-      print(idx, i)
-      if i < N:
-        fail[i-1] += 1
-      else:
-        allClearer += 1
-    
-    print(challenger)
-    
-    return answer
+  rank = [{i : 0 if challenger[i] == 0 else fail[i]/challenger[i]} for i in range(N)]
+  sorted_rank = sorted(rank, reverse = True, key = lambda x: list(x.values())[0])
+  for e in sorted_rank:
+    answer.append(list(e.keys())[0]+1)
+  print(answer)
+  return answer
   
 
 solution(5, [2, 1, 2, 6, 2, 4, 3, 3])

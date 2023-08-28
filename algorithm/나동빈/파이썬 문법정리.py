@@ -80,3 +80,9 @@ def funcGlo():
 
 funcGlo()
 print(globalVar)
+
+# 백준 파이썬 입출력받기
+# vs code에서는 디버그 모드로 실행시켜야 파이썬 입출력이 실행된다
+num = int(input('숫자를입력하세요:'))
+data = list(map(int, input().split()))
+a, b, c = map(int, input().split())
