@@ -83,6 +83,18 @@ print(globalVar)
 
 # 백준 파이썬 입출력받기
 # vs code에서는 디버그 모드로 실행시켜야 파이썬 입출력이 실행된다
-num = int(input('숫자를입력하세요:'))
-data = list(map(int, input().split()))
-a, b, c = map(int, input().split())
+# num = int(input('숫자를입력하세요:'))
+# data = list(map(int, input().split()))
+# a, b, c = map(int, input().split())
+
+# map함수
+# map(function, iterable한 객체)
+# 객체를 돌면서 요소 각각을 function에 매개변수로 전달하여 결과값을 return
+a = [1,2,3,4,5]
+def x3(e):
+    return e*3
+print(list(map(x3, a)))
+
+# result = list(map(function(x){return x*3}, a))
+# print("Ff",result)
+    
