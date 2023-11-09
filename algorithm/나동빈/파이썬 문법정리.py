@@ -26,7 +26,8 @@ print(b)
 # ================ 리스트 컴프리헨션 ================
 # 대괄호([])안에 조건문과 반복문을 넣어 초기화
 # 0부터 19 중 홀수만 포함하는 리스트
-oddList = [i for i in range(20) if i % 2 == 1]
+# oddList = [i for i in range(20) if i % 2 == 1]
+oddList = [i for i in range(20) if i%2 == 1]
 print(oddList)
 
 # 1부터 9까지의 제곱값
@@ -94,7 +95,7 @@ a = [1,2,3,4,5]
 def x3(e):
     return e*3
 print(list(map(x3, a)))
-
+print(list(map(int, '12345')))
 # result = list(map(function(x){return x*3}, a))
 # print("Ff",result)
     
