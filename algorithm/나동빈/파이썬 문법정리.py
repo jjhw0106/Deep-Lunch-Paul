@@ -98,4 +98,6 @@ print(list(map(x3, a)))
 print(list(map(int, '12345')))
 # result = list(map(function(x){return x*3}, a))
 # print("Ff",result)
-    
+
+# n, m 을 공백으로 구분하여 입력받기
+n, m = map(int, input().split())
