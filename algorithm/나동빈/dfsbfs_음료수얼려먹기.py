@@ -7,12 +7,19 @@ ice =  [
 n, m  = 4,5
 print(n,m)
 
+result = 0
+for x in range(n):
+  for y in range(m):
+    if dfs(y, x) == True:
+      result += 1
+
 def dfs(y, x):
   if y < 0 or x < 0 or y >=n or x >= m:
     return False
   
   if ice[y][x] == 0:
     ice[y][x] = 1
+<<<<<<< HEAD
     
     dfs(y-1, x)
     dfs(y, x-1)
@@ -31,6 +38,20 @@ for e in range(n):
 print(result)
       
   
+=======
+    dfs(y-1, x)
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> a5a5d6380be70897760119ed6fd9f6d70eccb07a
 
 # def dfs(y, x):
 #   if y < 0 or x < 0 or y >= n or x >= m:
