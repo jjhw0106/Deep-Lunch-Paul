@@ -101,3 +101,26 @@ print(list(map(int, '12345')))
 
 # n, m 을 공백으로 구분하여 입력받기
 n, m = map(int, input().split())
+
+
+# 2차원배열 선언 & 초기화
+
+# 1. 선언 후 한줄 씩 초기화
+a, b = [], []
+
+for e in range(n):
+  a.append(list(map(int, input().split())))
+for e in range(n):
+  b.append(list(map(int, input().split())))
+
+# 2. 선언과 초기화 동시에
+a = [list(map(int, input().split())) for _ in range(n)]
+b = [list(map(int, input().split())) for _ in range(n)]
+
+# [1, 2, 3] => 1 2 3 으로 출력
+# 1.
+for e in c:
+  print(' '.join(map(str, e)))
+# 2.
+# *e는 리스트의 모든 요소를 공백을 기준으로 나눠서 표현
+  print(*e)
