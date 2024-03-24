@@ -6,6 +6,8 @@ graph =  [
 from collections import deque
 
 def bfs(graph, start, visited):
+
+
   queue = deque([start])
   while queue:
     v = queue.popleft()
@@ -16,7 +18,9 @@ def bfs(graph, start, visited):
         print(visited[e])
 visited = [False] * 9
 bfs(graph, 1, visited)
-print(visited)
+a = deque([2])
+b = a.pop()
+print(b)
 
 
 
